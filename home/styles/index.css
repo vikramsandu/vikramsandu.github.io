@@ -1,210 +1,193 @@
-body{
-    /* font-family: "Tinos", Arial; */
-    background-color: rgb(242, 247, 247);
-    margin-bottom: 50px;
+body {
+    background-color: #f5f7fa;
+    margin-bottom: 60px;
+    color: #2d3748;
 }
 
-p{
-    margin-top:0px;
-    margin-bottom:0px;
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
+/* ── Navbar ── */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+    font-family: ‘Times New Roman’, Times, serif;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #555;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 16px;
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar a:hover,
+.navbar a[style*="color: rgb(0, 0, 0)"] {
+    color: #1a1a2e;
+    border-bottom-color: #e94560;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar { flex-direction: column; align-items: center; }
+    .navbar a { display: block; width: 100%; text-align: center; border-bottom: none; padding: 10px; }
+}
+
+/* ── Profile section ── */
 .main-div {
     display: flex;
-    align-items: flex-start; /* Aligns image and text at the top */
+    align-items: flex-start;
     justify-content: center;
-    gap: 5vw; /* Adds spacing between image and text */
-    margin-top: 30px;
+    gap: 4vw;
+    margin-top: 48px;
+    padding: 0 16px;
 }
 
 .profile-pic {
-    display: flex;
-    width: 20vw; /* 20% of the viewport width */
-    max-width: 200px; /* Ensures it doesn’t grow too big */
-    min-width: 150px; /* Ensures it doesn’t shrink too small */
-    border-radius: 4px;
+    width: 20vw;
+    max-width: 190px;
+    min-width: 140px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #d0d7e2;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
 }
 
 .my-info {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensures content aligns to the top */
+    justify-content: flex-start;
 }
 
 h1 {
     display: flex;
-    font-size: clamp(24px, 5vw, 40px); /* Resizes between 24px and 40px */
-    font-weight: 500;
-    margin-bottom: 2vh; /* Adjusts bottom margin dynamically */
-    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 600;
+    margin-bottom: 1.2vh;
+    font-family: ‘Times New Roman’, Times, serif;
+    color: #1a1a2e;
+    letter-spacing: 0.01em;
 }
 
 .about-info {
     display: flex;
     flex-direction: column;
-    gap: 0.3vw; /* Adjusts space dynamically based on screen width */
-    font-size: clamp(14px, 2vw, 18px); /* Dynamically resizes font */
+    gap: 4px;
+    font-size: clamp(14px, 1.8vw, 17px);
+    color: #4a5568;
 }
 
 .about-info a {
     text-decoration: none;
+    transition: color 0.2s;
+}
+
+.about-info a:hover {
+    color: #e94560 !important;
 }
 
 .social-links {
     display: flex;
-    gap: 10px; /* Space between icons */
+    gap: 14px;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .social-links a {
     text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.85;
 }
 
-/* 📌 Responsive adjustments for mobile screens */
+.social-links a:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
 @media (max-width: 600px) {
-    .main-div {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .my-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Ensures content aligns to the top */
-      text-align: left;
-  }
-
-    .profile-pic {
-        margin-right: 0;
-        margin-bottom: 10px; /* Adds space below image */
-    }
-
-    .about-info {
-        gap: 5px; /* Slightly increases spacing for readability */
-    }
+    .main-div { flex-direction: column; align-items: center; text-align: center; }
+    .my-info { align-items: center; }
+    .profile-pic { margin-bottom: 16px; }
+    .about-info { gap: 6px; align-items: center; }
+    .social-links { justify-content: center; }
 }
 
-
+/* ── Divider ── */
 .horizontal-line {
-  width: clamp(70%, 50vw, 90%); /* Responsive width: adjusts between 60% and 90% */
-  max-width: 1000px; /* Ensures it doesn’t get too wide */
-  margin: 2vh auto; /* Scales margin with screen height */
-  color: gray;
-  border: 1px solid gray; /* Ensure visibility */
+    width: clamp(70%, 50vw, 90%);
+    max-width: 860px;
+    margin: 2.5vh auto;
+    border: none;
+    border-top: 1px solid #dde1e7;
 }
 
 @media (max-width: 600px) {
-  .horizontal-line {
-      width: 90%; /* Uses more width on smaller screens */
-      margin: 3vh auto; /* Adds extra vertical spacing */
-  }
+    .horizontal-line { width: 90%; margin: 3vh auto; }
 }
 
-
-  .about-text{
-    align-content: center;
-  }
-  
-  .news{
-    display: flex;
-    align-items: center;
-  }
-  
-
-  .navbar {
-    background-color: #d7dddf;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    padding: 10px 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 500;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-/* Style the links inside the navigation bar */
-.navbar a {
-    color: rgb(112, 107, 107);
-    text-decoration: none;
-    padding: 14px 20px;
-    text-align: center;
-    font-size: 16px;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-    /* background-color: #8d9e9f;
-    border-radius: 5px; */
-    color: rgb(0, 0, 0);
-}
-
-/* Responsive design */
-@media screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar a {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-  }
-
+/* ── About text ── */
 .about-text {
-  width: clamp(60%, 50vw, 90%); /* Scales between 60% and 90% based on screen width */
-  max-width: 800px; /* Ensures it doesn’t stretch too much */
-  margin: auto;
-  text-align: left;
-  line-height: 1.6;
-  padding: 0.5vw; /* Adds some spacing inside */
+    width: clamp(60%, 50vw, 90%);
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    line-height: 1.75;
+    font-size: clamp(14px, 1.8vw, 17px);
+    color: #3a4557;
+    padding: 0 4px;
 }
 
 @media (max-width: 600px) {
-  .about-text {
-      width: 90%; /* Takes more space on small screens */
-      text-align: left; /* Center-aligns for better readability */
-  }
+    .about-text { width: 90%; }
 }
 
-
+/* ── News ── */
 .news-title {
-  width: clamp(60%, 50vw, 90%); /* Responsive width between 60% and 90% */
-  max-width: 800px; /* Ensures it doesn’t get too wide */
-  margin: auto;
-  text-align: left;
-  line-height: 1.6;
-  font-size: clamp(18px, 3vw, 25px); /* Responsive font size */
-  font-weight: 600;
-  font-family: 'Times New Roman', Times, serif;
+    width: clamp(60%, 50vw, 90%);
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 700;
+    font-family: ‘Times New Roman’, Times, serif;
+    color: #1a1a2e;
+    letter-spacing: 0.02em;
 }
 
 .news-list {
-  width: clamp(60%, 45vw, 85%); /* Responsive width between 60% and 85% */
-  max-width: 750px;
-  margin: auto;
-  text-align: left;
+    width: clamp(60%, 45vw, 85%);
+    max-width: 750px;
+    margin: 10px auto 0;
+    text-align: left;
+    padding-left: 0;
+    list-style: none;
 }
 
 .news-list li {
-  margin: 1vh 0; /* Scales margin dynamically based on viewport height */
-  font-size: clamp(14px, 2vw, 18px); /* Responsive font size */
+    font-size: clamp(14px, 1.8vw, 17px);
+    line-height: 1.6;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-left: 4px solid #e94560;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-
 @media (max-width: 600px) {
-  .news-title,
-  .news-list {
-      width: 90%; /* Takes up more space on small screens */
-      text-align: left; /* Centers text for better readability */
-  }
-
-  .news-list li {
-      font-size: 16px; /* Slightly bigger font for readability */
-  }
+    .news-title, .news-list { width: 90%; }
+    .news-list li { font-size: 15px; }
 }
 
